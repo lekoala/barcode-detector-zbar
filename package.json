@@ -1,7 +1,7 @@
 {
   "name": "barcode-detector-zbar",
   "version": "1.0.0",
-  "description": "Barcode decector polyfill using zbar.wasm",
+  "description": "Barcode detector polyfill using zbar.wasm",
   "main": "BarcodeDetectorPolyfill",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
