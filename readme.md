@@ -31,28 +31,28 @@ Running `npm run start` and see demo.html or https://codepen.io/lekoalabe/pen/ab
 ## Also check out
 
 Other
-https://zbar-wasm.github.io/demo/
+- https://zbar-wasm.github.io/demo/
 
 Api ref
-https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API
-https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+- https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API
+- https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 
 Scanner app
-https://github.com/mebjas/html5-qrcode
-https://github.com/maslick/koder
+- https://github.com/mebjas/html5-qrcode
+- https://github.com/maslick/koder
 
 Zbar
-https://github.com/samsam2310/zbar.wasm
-https://github.com/mchehab/zbar
+- https://github.com/samsam2310/zbar.wasm
+- https://github.com/mchehab/zbar
 
 Zxing
-https://github.com/zxing-js/browser
+- https://github.com/zxing-js/browser
 
 Other libs
-https://www.npmjs.com/package/qr-scanner (worker support)
-https://serratus.github.io/quaggaJS/ (nice rotation algo)
-https://github.com/ericblade/quagga2
+- https://www.npmjs.com/package/qr-scanner (worker support)
+- https://serratus.github.io/quaggaJS/ (nice rotation algo)
+- https://github.com/ericblade/quagga2
 
 Other polyfills
-https://github.com/giladaya/barcode-detector-polyfill
-https://github.com/gruhn/barcode-detector
+- https://github.com/giladaya/barcode-detector-polyfill
+- https://github.com/gruhn/barcode-detector
