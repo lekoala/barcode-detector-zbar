@@ -46,7 +46,7 @@ const CANVAS_SIZE = 480;
  * https://www.npmjs.com/package/qr-scanner (worker support)
  * https://serratus.github.io/quaggaJS/ (nice rotation algo)
  * https://github.com/ericblade/quagga2
- * 
+ *
  * Other polyfills
  * https://github.com/giladaya/barcode-detector-polyfill
  * https://github.com/gruhn/barcode-detector
@@ -191,6 +191,7 @@ typeName: "ZBAR_I25"
   }
 
   /**
+   * If the current document isn't loaded securely, navigator.mediaDevices will be undefined
    * @returns {bool}
    */
   static checkWebcamSupport() {
@@ -198,6 +199,14 @@ typeName: "ZBAR_I25"
       return true;
     }
     return false;
+  }
+
+  /**
+   * Use this the check secure context if needed
+   * @returns {bool}
+   */
+  static checkSecureContext() {
+    return !!window.isSecureContext;
   }
 
   static setupPolyfill() {

@@ -24,9 +24,23 @@ Simply use like the regular api (check https://developer.mozilla.org/en-US/docs/
 
 This polyfill uses zbar.wasm and therefore needs to load a ~200kb bin file in order to work. The polyfill itself is 9.5kb.
 
+## Checking secure context
+
+Webcam is only available in a secure context. Here is some sample code to help you (using Swal to show an error message).
+
+```js
+if (!BarcodeDetectorPolyfill.checkWebcamSupport()) {
+  if (!BarcodeDetectorPolyfill.checkSecureContext()) {
+    Swal.fire("You need a secure context!");
+  } else {
+    Swal.fire("No webcam connected!");
+  }
+}
+```
+
 ## You can try the demo
 
-Running `npm run start` and see demo.html or https://codepen.io/lekoalabe/pen/abyrqaL
+Running `npm run start` and see demo.html or https://codepen.io/lekoalabe/pen/abyrqaL (currently not working due to CORS issue loading the wasm file)
 
 ## Also check out
 
