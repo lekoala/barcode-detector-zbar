@@ -57,7 +57,7 @@ class BarcodeDetectorPolyfill {
     this.canvas.width = CANVAS_SIZE;
     this.canvas.height = CANVAS_SIZE;
     this.ctx = this.canvas.getContext("2d");
-    this.formats = options.formats ?? Object.values(SUPPORTED_FORMATS_MAP);
+    this.formats = options.formats || Object.values(SUPPORTED_FORMATS_MAP);
   }
 
   /**
