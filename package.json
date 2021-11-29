@@ -1,6 +1,6 @@
 {
   "name": "barcode-detector-zbar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Barcode detector polyfill using zbar.wasm",
   "main": "BarcodeDetectorPolyfill",
   "scripts": {
