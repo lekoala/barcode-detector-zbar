@@ -142,35 +142,32 @@ type: 25
 typeName: "ZBAR_I25"
 */
 
-          let topLeft = null;
-          let topRight = null;
-          let bottomRight = null;
-          let bottomLeft = null;
+          const bounds = { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity };
+
           res.points.forEach((point) => {
-            if (!topLeft || (point.x < topLeft.x && point.y < topLeft.y)) {
-              topLeft = point;
+              bounds.minX = Math.min(bounds.minX, point.x);
+              bounds.maxX = Math.max(bounds.maxX, point.x);
+              bounds.minY = Math.min(bounds.minY, point.y);
+              bounds.maxY = Math.max(bounds.maxY, point.y);
             }
-            if (!topRight || (point.x > topLeft.x && point.y < topLeft.y)) {
-              topRight = point;
-            }
-            if (!bottomRight || (point.x > topLeft.x && point.y > topLeft.y)) {
-              bottomRight = point;
-            }
-            if (!bottomLeft || (point.x < topLeft.x && point.y > topLeft.y)) {
-              bottomLeft = point;
-            }
-          });
+          );
 
           return {
             boundingBox: DOMRectReadOnly.fromRect({
-              x: topLeft.x,
-              y: topLeft.y,
-              width: Math.max(topRight.x, bottomRight.x) - Math.min(topLeft.x, bottomLeft.x),
-              height: Math.max(topRight.y, bottomRight.y) - Math.min(topLeft.y, bottomLeft.y),
+              x: bounds.minX,
+              y: bounds.minY,
+              width: bounds.maxX - bounds.minX,
+              height: bounds.maxY - bounds.minY,
             }),
-            cornerPoints: [topLeft, topRight, bottomRight, bottomLeft],
+            cornerPoints: [
+              { x: bounds.minX, y: bounds.minY },
+              { x: bounds.maxX, y: bounds.minY },
+              { x: bounds.maxX, y: bounds.maxY },
+              { x: bounds.minX, y: bounds.maxY },
+            ],
             format: nativeFormat,
             rawValue: res.decode(),
+            quality: res.quality,
           };
         });
       resolve(results);
